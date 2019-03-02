@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server-canvas.component.less']
 })
 export class ServerCanvasComponent implements OnInit {
-
+  servers: number[];
   constructor() { }
 
   ngOnInit() {
+    this.servers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   }
-
 }

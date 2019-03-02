@@ -1,12 +1,9 @@
-<p>
-  Server Canvas
-</p>
-<div class="server-canvas">  
-  <app-server></app-server>
-  <app-server></app-server>
-  <app-server></app-server>
-  <app-server></app-server>
-  <app-server></app-server>
-  <app-server></app-server>
-  <app-server></app-server>
+<header class="server-canvas__title">
+  <strong>
+    <h2>Server Canvas</h2>
+  </strong>
+</header>
+<br>
+<div class="server-canvas__wrapper">  
+  <app-server *ngFor='let server of servers'></app-server>
 </div>
