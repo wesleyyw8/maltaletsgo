@@ -11,7 +11,6 @@ export class ServerComponent implements OnInit {
   @Input() server;
 
   ngOnInit() {
-    console.log(this.server);
   }
 
 }

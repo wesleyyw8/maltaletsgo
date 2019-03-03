@@ -33,6 +33,11 @@ export function reducer(state = initialState, action) {
         ...state,
         { apps: []}
       ];
+    case ServerActionTypes.RemoveServer:
+      return [
+        ...state.slice(0,-1)
+      ]
+
     default:
       return state;
   }
