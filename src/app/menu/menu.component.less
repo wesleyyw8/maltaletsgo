@@ -1,5 +1,40 @@
 :host {
   flex-grow: 1;
-  background-color: red;
+  background-color: #1e1e1e;
   flex-basis: 300px;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: column;
+  .menu__add-remove-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .menu__add-remove-container-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  }
+  .menu__add-remove-container i {
+    font-size: 50px;
+    cursor:pointer;
+    outline:none;
+  }
+  .menu__add-remove-container-inner span {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+}
+.menu__apps-container {
+  margin-top: 50px;
+  @media screen and (max-width: 800px) {
+    margin-top: 0px;
+  }
+  .menu__apps-container__title{
+    margin-left: 20px;
+  }
 }

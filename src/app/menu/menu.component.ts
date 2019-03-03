@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.less']
 })
 export class MenuComponent implements OnInit {
-
+  apps: number[];
   constructor() { }
 
   ngOnInit() {
+    this.apps = [1,1,1,1,11,1,1,1];
   }
 
 }

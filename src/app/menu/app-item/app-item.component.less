@@ -1,0 +1,32 @@
+.app-item {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  background-color: #141414;
+  .app-item__bar-color {
+    background-color: red;
+    &:after {
+      content: " ";
+      white-space: pre;
+    }
+  }
+  .app-item__name {
+    margin-left: 20px;
+  }
+  .app-item__add-remove-container {
+    flex-grow: 2;
+    text-align: right;
+    font-size: 25px;
+    margin-right: -8px;
+    z-index: 0;
+    @media screen and (max-width: 800px) {
+      margin-right: 0px;
+    }
+  }
+  .app-item__add-remove-container i{
+    margin-left: 5px;
+    &:first-of-type {
+      opacity: 0.2;
+    }
+  }
+}
