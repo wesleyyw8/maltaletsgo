@@ -12,7 +12,11 @@
   <div class="menu__apps-container">
     <p class="menu__apps-container__title">Available Apps</p>
     <div class="menu__apps-container__content">
-      <app-app-item *ngFor='let app of apps'></app-app-item>
+      <app-app-item 
+        *ngFor='let app of apps'
+        [app]="app"
+      >
+      </app-app-item>
     </div>
   </div>
 </nav>

@@ -7,6 +7,10 @@ import { MenuComponent } from './menu/menu.component';
 import { ServerComponent } from './server-canvas/server/server.component';
 import { AppItemComponent } from './menu/app-item/app-item.component';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducer as menuReducer } from './menu/state/menu.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,14 @@ import { AppItemComponent } from './menu/app-item/app-item.component';
     AppItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({
+      apps: menuReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      name: 'appwes Devtools',
+      maxAge: 25
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

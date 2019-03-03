@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import * as fromApps from './state/menu.reducer';
+import { select, Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   apps: number[];
-  constructor() { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
-    this.apps = [1,1,1,1,11,1,1,1];
+    this.store.pipe(select(fromApps.getApps)).subscribe(
+      apps => this.apps = apps
+    );
   }
 
 }

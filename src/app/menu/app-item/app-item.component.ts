@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { App } from '../state/menu.reducer';
 
 @Component({
   selector: 'app-app-item',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppItemComponent implements OnInit {
 
   constructor() { }
+  @Input() app: App;
 
   ngOnInit() {
   }

@@ -1,8 +1,15 @@
 <div class="app-item">
-  <div class="app-item__bar-color"></div>
-  <div class="app-item__name">Hadoop</div>
+  <div class="app-item__bar-color"
+    [style.background-color]="app.appColor1"
+  ></div>
+  <div class="app-item__name">
+    {{app.appName}}
+  </div>
   <div class="app-item__add-remove-container">
     <i class="fa fa-minus-circle"></i>
-    <i class="fa fa-plus-circle"></i>
+    <i 
+      class="fa fa-plus-circle"
+      [style.color]="app.appColor1"
+    ></i>
   </div>
 </div>
