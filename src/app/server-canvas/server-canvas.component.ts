@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import * as fromServers from './state/server-canvas.reducer';
 
 @Component({
   selector: 'app-server-canvas',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server-canvas.component.less']
 })
 export class ServerCanvasComponent implements OnInit {
-  servers: number[];
-  constructor() { }
+  servers: [];
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
-    this.servers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    this.store.pipe(select(fromServers.getServers)).subscribe(
+      apps => this.servers = apps
+    );
   }
 }

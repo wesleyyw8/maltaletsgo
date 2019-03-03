@@ -2,30 +2,24 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface App {
   appName: string;
-  appColor1: string;
-  appColor2: string;
+  appColor: string;
 }
 
 const initialState: App[] = [{
   appName: 'Hadoop',
-  appColor1: 'blue',
-  appColor2: 'CornflowerBlue'
+  appColor: 'blue'
 }, {
   appName: 'Rails',
-  appColor1: 'red',
-  appColor2: 'orange'
+  appColor: 'red'
 }, {
   appName: 'Chronos',
-  appColor1: 'pink',
-  appColor2: 'violet'
+  appColor: 'pink'
 }, {
   appName: 'Storm',
-  appColor1: 'green',
-  appColor2: 'black'
+  appColor: 'green'
 }, {
   appName: 'Spark',
-  appColor1: 'yellow',
-  appColor2: 'white'
+  appColor: 'yellow'
 }];
 
 const getAppsFeatureState = createFeatureSelector<any>('apps');

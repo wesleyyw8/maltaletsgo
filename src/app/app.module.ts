@@ -10,6 +10,7 @@ import { AppItemComponent } from './menu/app-item/app-item.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer as menuReducer } from './menu/state/menu.reducer';
+import { reducer as serversReducer } from './server-canvas/state/server-canvas.reducer';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { reducer as menuReducer } from './menu/state/menu.reducer';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      apps: menuReducer
+      apps: menuReducer,
+      servers: serversReducer
     }),
     StoreDevtoolsModule.instrument({
       name: 'appwes Devtools',
