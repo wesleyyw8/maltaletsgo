@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as fromApps from './state/menu.reducer';
 import { select, Store } from '@ngrx/store';
+import * as serverCanvasActions from './../server-canvas/state/server-canvas.actions';
 
 @Component({
   selector: 'app-menu',
@@ -16,5 +17,7 @@ export class MenuComponent implements OnInit {
       apps => this.apps = apps
     );
   }
-
+  addServer(value: boolean): void {
+    this.store.dispatch(new serverCanvasActions.AddServer());
+  }
 }
