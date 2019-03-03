@@ -11,9 +11,11 @@ const initialState = [{
 },
 {
   apps: [{
-    appName: 'Storm',
-    appColor: 'red'
+    appName: 'Hadoop',
+    appColor: 'pink'
   }]
+}, {
+  apps: []
 }];
 
 const getServersState = createFeatureSelector<any>('servers');

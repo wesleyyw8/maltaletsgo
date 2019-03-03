@@ -1,3 +1,16 @@
 <div class="server">
-  server 1!
+  <div 
+    class="server__item"
+    [style.background-color]="serverItem.appColor"
+    *ngFor='let serverItem of server.apps'>
+    <div class="server__item-title">
+      {{serverItem.appName.substr(0,2)}}
+    </div>
+    <div class="server__item-name">
+      {{serverItem.appName}}
+    </div>
+    <div class="server__added">
+      added 21h ago
+    </div>
+  </div>
 </div>
