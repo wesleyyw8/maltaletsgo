@@ -2,8 +2,15 @@
   flex-grow: 3;
   background-color: black;
   padding-left: 50px;
+  @media screen and (max-width: 800px) {
+    padding-left: 0px;
+  }
+  flex-basis: 850px;
 }
 .server-canvas__wrapper {
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+  }
 }
