@@ -30,9 +30,9 @@ export const getServers = createSelector(
 );
 
 const addAppOnFirstServerAvailable: any = (state, app) => {
-  for (let x=0;x<=state.length -1;x++) {
+  for (let x = 0; x <= state.length - 1; x++) {
     if (state[x].apps.length < 2) {
-      state[x].apps.push(app)
+      state[x].apps.push(app);
       return state;
     }
   }
@@ -40,19 +40,19 @@ const addAppOnFirstServerAvailable: any = (state, app) => {
     apps: [app]
   });
   return state;
-}
+};
 
 const removeAppFromLastServerPossible: any = (state, appName) => {
-  for (let x=state.length -1;x>=0;x--) {
-    for (let y= state[x].apps.length -1;y >=0; y-- ) {
+  for (let x = state.length - 1; x >= 0; x--) {
+    for (let y = state[x].apps.length - 1; y >= 0; y-- ) {
       if (state[x].apps[y].appName === appName) {
-        state[x].apps.splice(y,1);
-        return state
+        state[x].apps.splice(y, 1);
+        return state;
       }
     }
   }
   return state;
-}
+};
 
 export function reducer(state = initialState, action) {
   switch ( action.type ) {
@@ -63,16 +63,16 @@ export function reducer(state = initialState, action) {
       ];
     case ServerActionTypes.RemoveServer:
       return [
-        ...state.slice(0,-1)
-      ]
+        ...state.slice(0, -1)
+      ];
     case ServerActionTypes.AddApp:
       return [
         ...addAppOnFirstServerAvailable(state, action.payload)
-      ]
+      ];
     case ServerActionTypes.RemoveApp:
       return [
         ...removeAppFromLastServerPossible(state, action.appName)
-      ]
+      ];
     default:
       return state;
   }

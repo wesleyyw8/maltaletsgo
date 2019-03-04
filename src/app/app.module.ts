@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer as menuReducer } from './menu/state/menu.reducer';
 import { reducer as serversReducer } from './server-canvas/state/server-canvas.reducer';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {TimeAgoPipe} from 'time-ago-pipe';
     }),
     StoreDevtoolsModule.instrument({
       name: 'appwes Devtools',
-      maxAge: 25
+      maxAge: 25,
+      logOnly: environment.production
     })
   ],
   providers: [],
