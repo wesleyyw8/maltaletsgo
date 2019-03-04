@@ -30,15 +30,21 @@ export const getServers = createSelector(
 );
 
 const addAppOnFirstServerAvailable: any = (state, app) => {
+  //Run on the first server running 0 apps.
   for (let x = 0; x <= state.length - 1; x++) {
-    if (state[x].apps.length < 2) {
+    if (state[x].apps.length === 0) {
       state[x].apps.push(app);
       return state;
     }
   }
-  state.push({
-    apps: [app]
-  });
+//   If all servers are running at least 1 app, the new app should be started on the first server running only 1
+// app
+  for (let x = 0; x <= state.length - 1; x++) {
+    if (state[x].apps.length === 1) {
+      state[x].apps.push(app);
+      return state;
+    }
+  }
   return state;
 };
 
