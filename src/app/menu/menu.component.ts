@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as fromApps from './state/menu.reducer';
 import { select, Store } from '@ngrx/store';
 import * as serverCanvasActions from './../server-canvas/state/server-canvas.actions';
+import { App } from './state/menu.reducer';
 
 @Component({
   selector: 'app-menu',
@@ -22,5 +23,8 @@ export class MenuComponent implements OnInit {
   }
   removeServer(value: boolean): void {
     this.store.dispatch(new serverCanvasActions.RemoveServer());
+  }
+  addApp(app: App): void {
+    this.store.dispatch(new serverCanvasActions.AddServer());
   }
 }

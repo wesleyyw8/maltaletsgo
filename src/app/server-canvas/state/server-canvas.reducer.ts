@@ -29,6 +29,19 @@ export const getServers = createSelector(
   state => state
 );
 
+const addAppOnFirstServerAvailable: any = (state, app) => {
+  for (let x=0;x<=state.length -1;x++) {
+    if (state[x].apps.length < 2) {
+      state[x].apps.push(app)
+      return state;
+    }
+  }
+  state.push({
+    apps: [app]
+  });
+  return state;
+}
+
 export function reducer(state = initialState, action) {
   switch ( action.type ) {
     case ServerActionTypes.AddServer:
@@ -40,7 +53,11 @@ export function reducer(state = initialState, action) {
       return [
         ...state.slice(0,-1)
       ]
-
+    case ServerActionTypes.AddApp:
+      const newState = addAppOnFirstServerAvailable(state, action.payload)
+      return [
+        ...newState
+      ]
     default:
       return state;
   }
