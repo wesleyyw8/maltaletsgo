@@ -12,14 +12,19 @@ const initialState = [{
     dateAdded: new Date('05/02/2015')
   }]
 },
+ {
+  apps: []
+},
 {
   apps: [{
     appName: 'Hadoop',
     appColor: 'pink',
     dateAdded: new Date()
+  }, {
+    appName: 'Hadoop',
+    appColor: 'pink',
+    dateAdded: new Date()
   }]
-}, {
-  apps: []
 }];
 
 const getServersState = createFeatureSelector<any>('servers');
@@ -29,8 +34,15 @@ export const getServers = createSelector(
   state => state
 );
 
+export const getAppsLastServer = createSelector(
+  getServersState,
+  servers => {
+    return servers[servers.length - 1].apps;
+  }
+);
+
 const addAppOnFirstServerAvailable: any = (state, app) => {
-  //Run on the first server running 0 apps.
+  // Run on the first server running 0 apps.
   for (let x = 0; x <= state.length - 1; x++) {
     if (state[x].apps.length === 0) {
       state[x].apps.push(app);
@@ -59,6 +71,8 @@ const removeAppFromLastServerPossible: any = (state, appName) => {
   }
   return state;
 };
+
+
 
 export function reducer(state = initialState, action) {
   switch ( action.type ) {
