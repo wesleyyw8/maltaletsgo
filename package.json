@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "fixlint": "ng lint wesapp --fix",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build"
   },
   "private": true,
   "dependencies": {
