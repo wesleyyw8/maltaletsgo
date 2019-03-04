@@ -9,3 +9,10 @@ npm run start:dev to run the server in dev mode.
 typescript, compiler and compiler-cli are in the dev dependences because heroku needs those. 
 Im not an angular2+ expert but I did my best and I hope you enjoy it.
 https://wesmalta.herokuapp.com/
+
+
+## step by step
+1 - clone this repo. 
+2 - cd wesapp
+3 - npm i
+4 - npm run dev:server
