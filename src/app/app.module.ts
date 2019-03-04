@@ -11,9 +11,11 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer as menuReducer } from './menu/state/menu.reducer';
 import { reducer as serversReducer } from './server-canvas/state/server-canvas.reducer';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 @NgModule({
   declarations: [
+    TimeAgoPipe,
     AppComponent,
     ServerCanvasComponent,
     MenuComponent,

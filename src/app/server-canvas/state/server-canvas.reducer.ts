@@ -4,16 +4,19 @@ import { ServerCanvasActions, ServerActionTypes } from './server-canvas.actions'
 const initialState = [{
   apps: [{
     appName: 'Storm',
-    appColor: 'red'
+    appColor: 'red',
+    dateAdded: new Date()
   }, {
     appName: 'Rails',
-    appColor: 'blue'
+    appColor: 'blue',
+    dateAdded: new Date('05/02/2015')
   }]
 },
 {
   apps: [{
     appName: 'Hadoop',
-    appColor: 'pink'
+    appColor: 'pink',
+    dateAdded: new Date()
   }]
 }, {
   apps: []
