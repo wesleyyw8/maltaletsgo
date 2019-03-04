@@ -6,7 +6,10 @@
     {{app.appName}}
   </div>
   <div class="app-item__add-remove-container">
-    <i class="fa fa-minus-circle"></i>
+    <i 
+      class="fa fa-minus-circle"
+      (click)="removeApp(app.appName)"
+    ></i>
     <i 
       class="fa fa-plus-circle"
       [style.color]="app.appColor"

@@ -42,6 +42,18 @@ const addAppOnFirstServerAvailable: any = (state, app) => {
   return state;
 }
 
+const removeAppFromLastServerPossible: any = (state, appName) => {
+  for (let x=state.length -1;x>=0;x--) {
+    for (let y= state[x].apps.length -1;y >=0; y-- ) {
+      if (state[x].apps[y].appName === appName) {
+        state[x].apps.splice(y,1);
+        return state
+      }
+    }
+  }
+  return state;
+}
+
 export function reducer(state = initialState, action) {
   switch ( action.type ) {
     case ServerActionTypes.AddServer:
@@ -54,9 +66,12 @@ export function reducer(state = initialState, action) {
         ...state.slice(0,-1)
       ]
     case ServerActionTypes.AddApp:
-      const newState = addAppOnFirstServerAvailable(state, action.payload)
       return [
-        ...newState
+        ...addAppOnFirstServerAvailable(state, action.payload)
+      ]
+    case ServerActionTypes.RemoveApp:
+      return [
+        ...removeAppFromLastServerPossible(state, action.appName)
       ]
     default:
       return state;

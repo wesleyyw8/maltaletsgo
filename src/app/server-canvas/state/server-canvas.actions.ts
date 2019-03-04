@@ -3,7 +3,8 @@ import { Action } from '@ngrx/store';
 export enum ServerActionTypes {
   AddServer = '[Servers] Add Server',
   RemoveServer = '[Servers] Remove Server',
-  AddApp = '[Apps] Add App'
+  AddApp = '[Apps] Add App',
+  RemoveApp = '[Apps] Remove App'
 }
 
 export class AddServer implements Action {
@@ -21,4 +22,9 @@ export class AddApp implements Action {
   }
 }
 
-export type ServerCanvasActions = AddServer | RemoveServer | AddApp;
+export class RemoveApp implements Action {
+  readonly type = ServerActionTypes.RemoveApp;
+  constructor(public appName) {}
+}
+
+export type ServerCanvasActions = AddServer | RemoveServer | AddApp | RemoveApp;

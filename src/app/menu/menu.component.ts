@@ -24,7 +24,4 @@ export class MenuComponent implements OnInit {
   removeServer(value: boolean): void {
     this.store.dispatch(new serverCanvasActions.RemoveServer());
   }
-  addApp(app: App): void {
-    this.store.dispatch(new serverCanvasActions.AddServer());
-  }
 }

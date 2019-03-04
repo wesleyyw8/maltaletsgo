@@ -17,4 +17,7 @@ export class AppItemComponent implements OnInit {
   addApp(app: App): void {
     this.store.dispatch(new serverCanvasActions.AddApp(app));
   }
+  removeApp(appName: string): void {
+    this.store.dispatch(new serverCanvasActions.RemoveApp(appName));
+  }
 }
