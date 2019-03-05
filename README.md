@@ -14,6 +14,7 @@ https://wesmalta.herokuapp.com/
 
 ## step by step
 1 - clone this repo.  
-2 - cd wesapp  
+2 - cd maltaletsgo-angular7  
 3 - npm i  
 4 - npm run dev:server  
+5 - open http://localhost:4200/  
