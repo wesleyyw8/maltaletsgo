@@ -6,7 +6,6 @@
     "start:dev": "ng serve",
     "start": "node server.js",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
     "fixlint": "ng lint wesapp --fix",
     "heroku-postbuild": "ng build"
