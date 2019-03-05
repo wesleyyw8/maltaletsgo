@@ -12,19 +12,15 @@ const initialState = [{
     dateAdded: new Date('05/02/2015')
   }]
 },
- {
-  apps: []
-},
 {
   apps: [{
     appName: 'Hadoop',
     appColor: '#b312cc',
     dateAdded: new Date()
-  }, {
-    appName: 'Hadoop',
-    appColor: '#b312cc',
-    dateAdded: new Date()
   }]
+},
+{
+ apps: []
 }];
 
 const getServersState = createFeatureSelector<any>('servers');
