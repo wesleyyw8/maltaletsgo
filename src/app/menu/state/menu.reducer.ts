@@ -7,19 +7,19 @@ export interface App {
 
 const initialState: App[] = [{
   appName: 'Hadoop',
-  appColor: 'blue'
+  appColor: '#b312cc'
 }, {
   appName: 'Rails',
-  appColor: 'red'
+  appColor: '#5c27e3'
 }, {
   appName: 'Chronos',
-  appColor: 'pink'
+  appColor: '#009cfc'
 }, {
   appName: 'Storm',
-  appColor: 'green'
+  appColor: '#26dead'
 }, {
   appName: 'Spark',
-  appColor: 'yellow'
+  appColor: '#69eb28'
 }];
 
 const getAppsFeatureState = createFeatureSelector<any>('apps');

@@ -4,11 +4,11 @@ import { ServerCanvasActions, ServerActionTypes } from './server-canvas.actions'
 const initialState = [{
   apps: [{
     appName: 'Storm',
-    appColor: 'red',
+    appColor: '#26dead',
     dateAdded: new Date()
   }, {
     appName: 'Rails',
-    appColor: 'blue',
+    appColor: '#5c27e3',
     dateAdded: new Date('05/02/2015')
   }]
 },
@@ -18,11 +18,11 @@ const initialState = [{
 {
   apps: [{
     appName: 'Hadoop',
-    appColor: 'pink',
+    appColor: '#b312cc',
     dateAdded: new Date()
   }, {
     appName: 'Hadoop',
-    appColor: 'pink',
+    appColor: '#b312cc',
     dateAdded: new Date()
   }]
 }];
