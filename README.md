@@ -8,7 +8,8 @@ node version around "10.15.1" and "npm": "^6.4.1". Another version might work or
 npm run start:dev to run the server in dev mode.  
 typescript, compiler and compiler-cli are in the dev dependences because heroku needs those.  
 I also used the time-ago-pipe library (https://www.npmjs.com/package/time-ago-pipe) to save the "app added x time ago" feature.  
-Im not an angular2+ expert but I did my best and I hope you enjoy it.  
+you can see the state with the reduxdev tools  
+I did my best and I hope you enjoy it.  
 https://wesmalta.herokuapp.com/  
 
 
